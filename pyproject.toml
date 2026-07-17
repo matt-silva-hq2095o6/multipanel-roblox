@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multipanel-roblox"
+version = "0.2.1"
+description = "TUI dashboard and CLI tool for Roblox Open Cloud APIs"
+authors = [
+    { name = "Alex Carter", email = "alex@carter.sh" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.25.0",
+    "rich>=13.4.0",
+    "textual>=0.35.0",
+    "pydantic>=2.4.0",
+    "pyyaml>=6.0.1",
+    "tomli>=2.0.1; python_version < '3.11'",
+]
+
+[project.scripts]
+multipanel = "multipanel_roblox.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["multipanel_roblox*"]
